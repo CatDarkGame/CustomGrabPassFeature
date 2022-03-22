@@ -20,10 +20,12 @@ public class FilteredRenderPass : ScriptableRenderPass
         _filteringSettings = new FilteringSettings(RenderQueueRange.all, layerMask);
         // 스텐실 & 컬러마스크 등 렌더링할때 상태 세팅
         _renderStateBlock = new RenderStateBlock(RenderStateMask.Nothing);
+        
     }
 
     public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
     {
+        ConfigureInput(ScriptableRenderPassInput.Color);
         CommandBuffer cmd = CommandBufferPool.Get();
        // context.ExecuteCommandBuffer(cmd);
         cmd.Clear();

@@ -44,9 +44,12 @@ public class CustomGrabPassFeature : ScriptableRendererFeature
         }
         _renderPass = new FilteredRenderPass(_settings.passEvent + 1, shaderTagIds, _settings.layerMask);
     }
+    
+  
 
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
+        
         _grabPass.Setup(renderer.cameraColorTarget);
         
         renderer.EnqueuePass(_grabPass);

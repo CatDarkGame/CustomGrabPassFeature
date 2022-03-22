@@ -25,6 +25,8 @@ public class GrabPass : ScriptableRenderPass
 
         public void Setup(RenderTargetIdentifier source)
         {
+            ConfigureInput(ScriptableRenderPassInput.Color);
+            
             _source = source;
         }
 
@@ -46,7 +48,8 @@ public class GrabPass : ScriptableRenderPass
                 descriptor.height /= 4;
             }
 
-            // RT 등록
+            // 임시 RT 생성
+            // RendererData에서 Intermediate Texture옵션을 Always로 해야함.
             cmd.GetTemporaryRT(_destination.id, descriptor, _downsamplingMethod == Downsampling.None ? FilterMode.Point : FilterMode.Bilinear);
             // Global Shader Propertie 등록
             cmd.SetGlobalTexture(_globalProperty, _destination.Identifier());
