@@ -82,7 +82,7 @@ Shader "CatDarkGame/SimpleDistortion"
                 float4 grabPassUV = i.screenPosition;
                 grabPassUV.xy += noise * _NoiseIntensity;
                 float4 grabPass = tex2Dproj(_CustomCameraTexture, grabPassUV);
-                //float4 grabPass = tex2Dproj(_CameraOpaqueTexture, grabPassUV);	
+                // float4 grabPass = tex2Dproj(_CameraOpaqueTexture, grabPassUV);	
                 
                 float4 final = grabPass;
                 final.a = _Alpha;

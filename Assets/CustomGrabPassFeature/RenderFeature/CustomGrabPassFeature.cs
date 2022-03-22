@@ -49,10 +49,10 @@ public class CustomGrabPassFeature : ScriptableRendererFeature
 
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
-        
         _grabPass.Setup(renderer.cameraColorTarget);
         
         renderer.EnqueuePass(_grabPass);
         renderer.EnqueuePass(_renderPass);
     }
 }
+

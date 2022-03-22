@@ -68,7 +68,7 @@ Material:
     m_Floats:
     - _Alpha: 1
     - _NoiseIntensity: 0.07
-    - _NoiseSpeed: 0.43
+    - _NoiseSpeed: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors: []

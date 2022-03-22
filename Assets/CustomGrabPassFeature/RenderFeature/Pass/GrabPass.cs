@@ -70,3 +70,6 @@ public class GrabPass : ScriptableRenderPass
             cmd.ReleaseTemporaryRT(_destination.id);
         }
     }
+    
+    
+    
